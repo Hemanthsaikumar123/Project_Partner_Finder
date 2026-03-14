@@ -1,21 +1,32 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 
+import Login from "./pages/Login"
+import Register from "./pages/Register"
+import ProjectFeed from "./pages/ProjectFeed"
+import CreateProject from "./pages/CreateProject"
+
 function App() {
+
   return (
+
     <BrowserRouter>
+
       <Routes>
 
-        <Route path="/" element={<h1>Home</h1>} />
+        <Route path="/login" element={<Login />} />
 
-        <Route path="/login" element={<h1>Login Page</h1>} />
+        <Route path="/register" element={<Register />} />
 
-        <Route path="/register" element={<h1>Register Page</h1>} />
+        <Route path="/dashboard" element={<ProjectFeed />} />
 
-        <Route path="/dashboard" element={<h1>Dashboard</h1>} />
+        <Route path="/create-project" element={<CreateProject />} />
 
       </Routes>
+
     </BrowserRouter>
+
   )
+
 }
 
 export default App

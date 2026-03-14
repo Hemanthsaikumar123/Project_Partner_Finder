@@ -9,6 +9,10 @@ exports.register = async (req, res) => {
 
     const { name, email, password } = req.body
 
+    if (!name || !email || !password) {
+      return res.status(400).json({ message: "Name, email, and password are required" })
+    }
+
     const existingUser = await User.findOne({ email })
 
     if (existingUser) {
@@ -42,6 +46,9 @@ exports.register = async (req, res) => {
     })
 
   } catch (error) {
+    if (error?.name === "ValidationError") {
+      return res.status(400).json({ message: "Please provide valid registration details" })
+    }
 
     res.status(500).json({ message: "Server error" })
 
