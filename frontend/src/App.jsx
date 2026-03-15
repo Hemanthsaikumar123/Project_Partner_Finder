@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar"
 import ProtectedRoute from "./components/ProtectedRoute"
 import MyProjects from "./pages/MyProjects"
 import MyApplications from "./pages/MyApplications"
+import Profile from "./pages/Profile"
 
 function App() {
 
@@ -69,6 +70,15 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+            }
+          />
 
         <Route path="*" element={<Navigate to="/dashboard" replace />} />
 

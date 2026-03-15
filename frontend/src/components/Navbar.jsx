@@ -53,6 +53,13 @@ function Navbar() {
             My Applications
         </Link> }
 
+        {user && <Link
+        to="/profile"
+        className="hover:text-gray-300"
+        >
+        Profile
+        </Link>}
+
         {user && (
           <button
             onClick={handleLogout}
