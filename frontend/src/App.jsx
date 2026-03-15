@@ -5,12 +5,15 @@ import Register from "./pages/Register"
 import ProjectFeed from "./pages/ProjectFeed"
 import CreateProject from "./pages/CreateProject"
 import ProjectDetails from "./pages/ProjectDetails"
+import Navbar from "./components/Navbar"
 
 function App() {
 
   return (
 
     <BrowserRouter>
+
+      <Navbar />
 
       <Routes>
 
