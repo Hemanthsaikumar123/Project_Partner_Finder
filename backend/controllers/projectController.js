@@ -265,10 +265,27 @@ exports.getAppliedProjects = async (req, res) => {
       "applicants.user": req.user
     }).populate("owner", "name")
 
-    res.json(projects)
+    const result = projects.map(project => {
+
+      const application = project.applicants.find(
+        app => app.user.toString() === req.user
+      )
+
+      return {
+        _id: project._id,
+        title: project.title,
+        owner: project.owner,
+        status: application.status
+      }
+
+    })
+
+    res.json(result)
 
   } catch (error) {
+
     res.status(500).json({ message: "Server error" })
+
   }
 
 }

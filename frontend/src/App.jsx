@@ -7,6 +7,8 @@ import CreateProject from "./pages/CreateProject"
 import ProjectDetails from "./pages/ProjectDetails"
 import Navbar from "./components/Navbar"
 import ProtectedRoute from "./components/ProtectedRoute"
+import MyProjects from "./pages/MyProjects"
+import MyApplications from "./pages/MyApplications"
 
 function App() {
 
@@ -46,6 +48,24 @@ function App() {
           element={
             <ProtectedRoute>
               <ProjectDetails />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/my-projects"
+          element={
+            <ProtectedRoute>
+              <MyProjects />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/my-applications"
+          element={
+            <ProtectedRoute>
+              <MyApplications />
             </ProtectedRoute>
           }
         />

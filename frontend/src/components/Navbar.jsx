@@ -38,6 +38,21 @@ function Navbar() {
           Create Project
         </Link>}
 
+        {user && <Link
+          to="/my-projects"
+          className="hover:text-gray-300"
+        >
+          My Projects
+        </Link> }
+
+
+        {user && <Link
+          to="/my-applications"
+          className="hover:text-gray-300"
+        >
+            My Applications
+        </Link> }
+
         {user && (
           <button
             onClick={handleLogout}
