@@ -14,18 +14,38 @@ function App() {
     <BrowserRouter>
 
       <Navbar />
-
       <Routes>
 
         <Route path="/login" element={<Login />} />
 
         <Route path="/register" element={<Register />} />
 
-        <Route path="/dashboard" element={<ProjectFeed />} />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <ProjectFeed />
+            </ProtectedRoute>
+          }
+        />
 
-        <Route path="/create-project" element={<CreateProject />} />
+        <Route
+          path="/create-project"
+          element={
+            <ProtectedRoute>
+              <CreateProject />
+            </ProtectedRoute>
+          }
+        />
 
-        <Route path="/projects/:id" element={<ProjectDetails />} />
+        <Route
+          path="/projects/:id"
+          element={
+            <ProtectedRoute>
+              <ProjectDetails />
+            </ProtectedRoute>
+          }
+        />
 
       </Routes>
 
